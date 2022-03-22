@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'To-do list App';
+
+  list: any[] = [];
+  addTask(item: string) {
+    console.warn(item);
+  }
 }

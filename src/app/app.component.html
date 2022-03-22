@@ -1,4 +1,11 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
+<h1>{{ name }}</h1>
 
-<app-todo></app-todo>
+<input type="text" #task />
+<button click="addTask(task.value)">Add Task</button>
+<br />
+<br />
+<h3>Tasks to do</h3>
+<br />
+<ol *ngFor="let item of list">
+  <li>{{ item.name }}</li>
+</ol>
