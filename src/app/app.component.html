@@ -15,7 +15,9 @@
         <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
         <span [style.text-decoration]="todo.completed ? 'line-through' : ''"
           >{{ todo.newTodo }}
+          <button (click) = "delete(i)"> Delete </button>
         </span>
+        
       </li>
     </ul>
   </body>

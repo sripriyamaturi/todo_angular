@@ -27,4 +27,8 @@ export class AppComponent {
     this.newTodo = '';
     event.preventDefault();
   }
+
+  delete(index) {
+    this.todos.splice(index, 1);
+  }
 }
