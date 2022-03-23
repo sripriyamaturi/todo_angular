@@ -18,11 +18,12 @@ export class AppComponent {
     this.todos = [];
   }
 
-  addTodo(event) {
+  addTodo() {
     this.todoObj = {
       newTodo: this.newTodo,
       completed: false,
     };
+    console.warn(event);
     this.todos.push(this.todoObj);
     this.newTodo = '';
     event.preventDefault();

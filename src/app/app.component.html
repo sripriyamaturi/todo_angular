@@ -1,24 +1,16 @@
-<html>
-  <head>
-    <title>TODO APP</title>
-  </head>
-  <body>
-    <h1>{{ name }}</h1>
+<h1>{{ name }}</h1>
 
-    <form (submit)="addTodo($event)">
-      <input [(ngModel)]="newTodo" class="textfield" name="newTodo" />
-      <button type="submit">Add Todo</button>
-    </form>
 
-    <ul>
-      <li *ngFor="let todo of todos; let i = index">
-        <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
-        <span [style.text-decoration]="todo.completed ? 'line-through' : ''"
-          >{{ todo.newTodo }}
-          <button (click) = "delete(i)"> Delete </button>
-        </span>
-        
-      </li>
-    </ul>
-  </body>
-</html>
+  <input [(ngModel)]="newTodo" class="textfield" name="newTodo" />
+  <button (click) = "addTodo()" type="submit">Add Todo</button>
+
+
+<ul>
+  <li *ngFor="let todo of todos; let i = index">
+    <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
+    <span [style.text-decoration]="todo.completed ? 'line-through' : ''"
+      >{{ todo.newTodo }}
+      <button (click)="delete(i)">Delete</button>
+    </span>
+  </li>
+</ul>
