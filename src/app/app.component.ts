@@ -8,8 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name = 'To-do list App';
 
-  list: any[] = [];
-  addTask(item: string) {
-    console.warn(item);
+  newTodo: string;
+  todos: any;
+  todoObj: any;
+  completed: boolean;
+
+  constructor() {
+    this.newTodo = '';
+    this.todos = [];
+  }
+
+  addTodo(event) {
+    this.todoObj = {
+      newTodo: this.newTodo,
+      completed: false,
+    };
+    this.todos.push(this.todoObj);
+    this.newTodo = '';
+    event.preventDefault();
   }
 }
