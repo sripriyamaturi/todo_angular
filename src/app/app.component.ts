@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'To-do list App';
+  nam = 'To-do list App';
 
   newTodo: string;
   todos: any;
@@ -23,10 +23,10 @@ export class AppComponent {
       newTodo: this.newTodo,
       completed: false,
     };
-    console.warn(event);
-    this.todos.push(this.todoObj);
-    this.newTodo = '';
-    event.preventDefault();
+    
+      this.todos.push(this.todoObj);
+      this.newTodo = '';
+    
   }
 
   delete(index) {

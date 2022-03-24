@@ -1,16 +1,17 @@
-<h1>{{ name }}</h1>
+<h1>{{ nam }}</h1>
 
-
-  <input [(ngModel)]="newTodo" class="textfield" name="newTodo" />
-  <button (click) = "addTodo()" type="submit">Add Todo</button>
-
+<input [(ngModel)]="newTodo" class="textfield" name="newTodo" />
+<button (click)="addTodo()" type="submit">Add Todo</button>
 
 <ul>
-  <li *ngFor="let todo of todos; let i = index">
-    <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
-    <span [style.text-decoration]="todo.completed ? 'line-through' : ''"
-      >{{ todo.newTodo }}
-      <button (click)="delete(i)">Delete</button>
-    </span>
+  <li style="list-style-type:none;" *ngFor="let todo of todos; let i = index">
+    <div *ngIf="todo.newTodo.trim().length != 0">
+      <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
+
+      <span [style.text-decoration]="todo.completed ? 'line-through' : ''"
+        >{{ todo.newTodo }}
+        <button (click)="delete(i)">Delete</button>
+      </span>
+    </div>
   </li>
 </ul>
