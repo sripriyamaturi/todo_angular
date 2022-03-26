@@ -13,5 +13,6 @@
         <button (click)="delete(i)">Delete</button>
       </span>
     </div>
+    <button (click)="todo.isDelete = false" *ngIf="todo.isDelete">Undo</button>
   </li>
 </ul>

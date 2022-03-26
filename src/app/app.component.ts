@@ -12,10 +12,12 @@ export class AppComponent {
   todos: any;
   todoObj: any;
   completed: boolean;
+  isDelete: boolean;
 
   constructor() {
     this.newTodo = '';
     this.todos = [];
+    this.isDelete = false;
   }
 
   addTodo() {
@@ -23,13 +25,21 @@ export class AppComponent {
       newTodo: this.newTodo,
       completed: false,
     };
-    
-      this.todos.push(this.todoObj);
-      this.newTodo = '';
-    
+
+    this.todos.push(this.todoObj);
+    this.newTodo = '';
   }
 
-  delete(index) {
-    this.todos.splice(index, 1);
+  delete(index: any) {
+    const Task = this.todos[index];
+    this.todoObj.isDelete = true;
+
+    setTimeout(() => {
+      if (this.todoObj.isDelete) {
+        const ind = this.todos.indexOf(Task);
+        this.todos.splice(ind, 1);
+        this.todoObj.isDelete = false;
+      }
+    }, 2000);
   }
 }
