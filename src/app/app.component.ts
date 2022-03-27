@@ -32,7 +32,7 @@ export class AppComponent {
 
   delete(index: any) {
     const Task = this.todos[index];
-    this.todoObj.isDelete = true;
+    this.todoObj.isDelete = !this.todoObj.isDelete;
 
     setTimeout(() => {
       if (this.todoObj.isDelete) {
@@ -40,6 +40,7 @@ export class AppComponent {
         this.todos.splice(ind, 1);
         this.todoObj.isDelete = false;
       }
-    }, 2000);
+    }, 3000);
+    
   }
 }
